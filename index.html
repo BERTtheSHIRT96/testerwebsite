@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive One-Page Website</title>
-    <!-- Link to Google Fonts for styling the links -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <!-- tsParticles library -->
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.9.3/tsparticles.bundle.min.js"></script>
+    <title>Interactive Network Website</title>
+    <!-- tsParticles CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
     <style>
-        body, html {
+        /* Reset default margins and paddings */
+        * {
             margin: 0;
             padding: 0;
-            height: 100%;
-            background-color: #000;
-            font-family: 'Roboto', sans-serif;
-            overflow: hidden;
-            position: relative;
+            box-sizing: border-box;
         }
 
+        /* Set the body to take full height and have a black background */
+        body, html {
+            height: 100%;
+            width: 100%;
+            background-color: #000;
+            overflow: hidden;
+            position: relative;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Container for tsParticles */
         #tsparticles {
             position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background-color: #000;
-            background-size: cover;
-            background-position: 50% 50%;
             z-index: 1;
         }
 
+        /* Footer containing the links */
         .footer {
             position: absolute;
             bottom: 20px;
@@ -37,6 +43,7 @@
             z-index: 2;
         }
 
+        /* Styling for the navigation links */
         .footer a {
             color: #fff;
             text-decoration: none;
@@ -46,21 +53,46 @@
         }
 
         .footer a:hover {
-            color: #1e90ff;
+            color: #00f;
+        }
+
+        /* Optional: Centered content (e.g., a title) */
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            font-size: 20px;
         }
     </style>
 </head>
 <body>
-
-    <!-- Particle Background -->
+    <!-- tsParticles Container -->
     <div id="tsparticles"></div>
 
-    <!-- Footer with Links -->
+    <!-- Optional: Centered Content -->
+    <div class="content">
+        <h1>Welcome to My Website</h1>
+        <p>Explore the interactive network below.</p>
+    </div>
+
+    <!-- Footer with Navigation Links -->
     <div class="footer">
-        <a href="https://blog.bertbyte.com" target="_blank" rel="noopener noreferrer">Blog</a>
-        <a href="https://shop.bertbyte.com" target="_blank" rel="noopener noreferrer">Shop</a>
-        <a href="https://portfolio.bertbyte.com" target="_blank" rel="noopener noreferrer">Portfolio</a>
-        <a href="https://about.bertbyte.com" target="_blank" rel="noopener noreferrer">About</a>
+        <a href="#blog">Blog</a>
+        <a href="#shop">Shop</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
     </div>
 
     <!-- Initialize tsParticles -->
@@ -68,20 +100,96 @@
         tsParticles.load("tsparticles", {
             "fullScreen": {
                 "enable": true,
-                "zIndex": 1
+                "zIndex": 0
             },
             "particles": {
                 "number": {
-                    "value": 60,
+                    "value": 80,
                     "density": {
                         "enable": true,
-                        "area": 800
+                        "value_area": 800
                     }
                 },
                 "color": {
                     "value": "#ffffff"
                 },
                 "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "wid
+                    "type": "circle"
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false
+                    }
+                },
+                "links": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "attract": {
+                        "enable": false
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 100,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>
