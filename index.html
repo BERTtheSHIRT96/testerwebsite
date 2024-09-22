@@ -70,7 +70,7 @@
         {
           "particles": {
             "number": {
-              "value": 80,
+              "value": 60, // Reduced number for smoother performance
               "density": {
                 "enable": true,
                 "value_area": 800
@@ -90,7 +90,7 @@
               },
             },
             "opacity": {
-              "value": 0.5,
+              "value": 0.7, // Increased opacity for better visibility
               "random": false,
               "anim": {
                 "enable": false,
@@ -100,7 +100,7 @@
               }
             },
             "size": {
-              "value": 3,
+              "value": 4, // Slightly larger particles
               "random": true,
               "anim": {
                 "enable": false,
@@ -111,14 +111,14 @@
             },
             "line_linked": {
               "enable": true,
-              "distance": 150,
+              "distance": 120, // Reduced distance for denser connections
               "color": "#ffffff",
-              "opacity": 0.4,
+              "opacity": 0.3, // Lower opacity for subtle lines
               "width": 1
             },
             "move": {
               "enable": true,
-              "speed": 2,
+              "speed": 1.5, // Slowed down speed for smoother movement
               "direction": "none",
               "random": false,
               "straight": false,
@@ -135,7 +135,7 @@
             "events": {
               "onhover": {
                 "enable": true,
-                "mode": "repulse"
+                "mode": "grab" // Changed to 'grab' for smoother interaction
               },
               "onclick": {
                 "enable": true,
@@ -145,9 +145,9 @@
             },
             "modes": {
               "grab": {
-                "distance": 400,
+                "distance": 200, // Increased distance for a gentler grab effect
                 "line_linked": {
-                  "opacity": 1
+                  "opacity": 0.5
                 }
               },
               "bubble": {
